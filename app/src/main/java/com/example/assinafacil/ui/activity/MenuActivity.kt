@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.assinafacil.R
 import com.example.assinafacil.databinding.ActivityMenuBinding
+import com.example.assinafacil.model.Jornada
 import java.text.DateFormat
 import java.util.Calendar
 
@@ -27,7 +28,7 @@ class MenuActivity : AppCompatActivity() {
     private fun registraJornada() {
 
         val jornada = DateFormat.getInstance().format(Calendar.getInstance().time)
-
+        salvaJornada()
         AlertDialog.Builder(this)
             .setTitle("Registrar Jornada")
             .setMessage("Jornada registrada:" + jornada)
@@ -40,4 +41,10 @@ class MenuActivity : AppCompatActivity() {
             .create()
             .show()
         }
+
+    private fun salvaJornada(data): Jornada {
+        return Jornada(
+            dataHora =
+        )
     }
+}

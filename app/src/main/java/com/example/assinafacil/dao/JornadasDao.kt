@@ -13,7 +13,11 @@ class JornadasDao {
     }
 
     companion object{
-        private val jornadas = mutableListOf<Jornada>()
+        private val jornadas = mutableListOf<Jornada>(
+            Jornada(
+                dataHora = "28/03/2023 18:53"
+            )
+        )
     }
 
 }
