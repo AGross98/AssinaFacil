@@ -36,7 +36,7 @@ class ListaJornadaAdapter(
 
     fun atualiza(jornada: List<Jornada>) {
         this.jornadas.clear()
-        this.jornadas.addAll(jornadas)
+        this.jornadas.addAll(jornada)
         notifyDataSetChanged()
     }
 }
