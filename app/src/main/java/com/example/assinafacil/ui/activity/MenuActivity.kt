@@ -53,10 +53,10 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun salvaJornada(data: String) {
-        val dao = JornadasDao()
+
         val novaJornada = Jornada(
             dataHora = data
         )
-        dao.registra(novaJornada)
+       // dao.registra(novaJornada)
     }
 }
