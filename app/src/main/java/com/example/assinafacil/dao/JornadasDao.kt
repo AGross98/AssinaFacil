@@ -1,23 +1,17 @@
 package com.example.assinafacil.dao
 
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
 import com.example.assinafacil.model.Jornada
 
-class JornadasDao {
+@Dao
+interface JornadasDao {
 
-    fun registra(jornada: Jornada){
-        jornadas.add(jornada)
-    }
+    @Query("SELECT * FROM jornada")
+    fun getAll(): List<Jornada>
 
-    fun buscaJornadas(): List<Jornada>{
-        return jornadas.toList()
-    }
-
-    companion object{
-        private val jornadas = mutableListOf<Jornada>(
-            Jornada(
-                dataHora = "28/03/2023 18:53"
-            )
-        )
-    }
+    @Insert
+    fun salvar(vararg jornada: Jornada)
 
 }

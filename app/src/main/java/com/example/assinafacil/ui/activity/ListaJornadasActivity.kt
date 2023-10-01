@@ -1,20 +1,20 @@
 package com.example.assinafacil.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.assinafacil.R
-import com.example.assinafacil.dao.JornadasDao
+import com.example.assinafacil.dataBase.AppData
 import com.example.assinafacil.databinding.ActivityListaJornadasBinding
-import com.example.assinafacil.model.Jornada
 import com.example.assinafacil.ui.activity.recyclerview.adapter.ListaJornadaAdapter
 
 class ListaJornadasActivity : AppCompatActivity() {
-    private val dao = JornadasDao()
-    private val adapter = ListaJornadaAdapter(context = this, jornadas = dao.buscaJornadas())
-    private val binding by lazy{
+    private val db = AppData.getInstance(this)
+    private val dao = db.JornadasDao()
+    private val adapter = ListaJornadaAdapter(context = this, tornadoes = dao.getAll())
+    private val binding by lazy {
         ActivityListaJornadasBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -23,7 +23,7 @@ class ListaJornadasActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        adapter.atualiza(dao.buscaJornadas())
+        adapter.atualiza(dao.getAll())
     }
 
     private fun configuraRecyclertView() {

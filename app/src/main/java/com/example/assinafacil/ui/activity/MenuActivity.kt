@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.room.Room
 import com.example.assinafacil.R
 import com.example.assinafacil.dao.JornadasDao
+import com.example.assinafacil.dataBase.AppData
 import com.example.assinafacil.databinding.ActivityMenuBinding
 import com.example.assinafacil.model.Jornada
 import java.text.DateFormat
@@ -19,6 +21,7 @@ class MenuActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityMenuBinding.inflate(layoutInflater)
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,10 +56,11 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun salvaJornada(data: String) {
-        val dao = JornadasDao()
+        val db = AppData.getInstance(this)
+        val dao = db.JornadasDao()
         val novaJornada = Jornada(
             dataHora = data
         )
-        dao.registra(novaJornada)
+        dao.salvar(novaJornada)
     }
 }
