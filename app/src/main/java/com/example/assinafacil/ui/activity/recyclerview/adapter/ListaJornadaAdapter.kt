@@ -9,9 +9,9 @@ import com.example.assinafacil.model.Jornada
 
 class ListaJornadaAdapter(
     private val context: Context,
-    tornadoes: List<Jornada>
+    jornadas: List<Jornada> = emptyList()
 ) : RecyclerView.Adapter<ListaJornadaAdapter.ViewHolder>() {
-    private val jornadas = tornadoes.toMutableList()
+    private val jornadas = jornadas.toMutableList()
 
     class ViewHolder(private val binding: ActivityJornadaBinding) :
         RecyclerView.ViewHolder(binding.root) {

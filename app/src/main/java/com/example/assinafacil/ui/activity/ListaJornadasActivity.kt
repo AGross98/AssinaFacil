@@ -1,6 +1,7 @@
 package com.example.assinafacil.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.assinafacil.dataBase.AppData
@@ -8,9 +9,7 @@ import com.example.assinafacil.databinding.ActivityListaJornadasBinding
 import com.example.assinafacil.ui.activity.recyclerview.adapter.ListaJornadaAdapter
 
 class ListaJornadasActivity : AppCompatActivity() {
-    private val db = AppData.getInstance(this)
-    private val dao = db.JornadasDao()
-    private val adapter = ListaJornadaAdapter(context = this, tornadoes = dao.getAll())
+    private val adapter = ListaJornadaAdapter(context = this)
     private val binding by lazy {
         ActivityListaJornadasBinding.inflate(layoutInflater)
     }
@@ -18,13 +17,17 @@ class ListaJornadasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        val db = AppData.getInstance(this)
+        val dao = db.JornadasDao()
+        Log.i("Salvou", "salvaJornada: "+ dao.getAll())
         configuraRecyclertView()
-    }
-
-    override fun onResume() {
-        super.onResume()
         adapter.atualiza(dao.getAll())
     }
+
+/*    override fun onResume() {
+        super.onResume()
+        adapter.atualiza(dao.getAll())
+    }*/
 
     private fun configuraRecyclertView() {
         val recyclerView = binding.recyclerView
