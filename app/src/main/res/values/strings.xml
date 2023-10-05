@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Assina Facil</string>
+    <string name="botao_registrar_jornada">Registrar Jornada</string>
+    <string name="botao_historico_jornada">Histórico de Jornada</string>
+    <string name="botao_assinar_cartao_ponto">Assinar Cartão de Ponto</string>
+    <string name="botao_visualizar_holerite">Visualizar Holerite</string>
+
 </resources>
