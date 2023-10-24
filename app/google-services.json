@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "945934086087",
+    "project_id": "assina-facil-c54c2",
+    "storage_bucket": "assina-facil-c54c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945934086087:android:953ee8a94c640b4094b3e2",
+        "android_client_info": {
+          "package_name": "com.example.assinafacil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCht5EZpgTEC59MgWHM1BDbtuFsP7sctwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
