@@ -36,10 +36,10 @@ class SignupActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Password does not matched", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "A senha não coincide", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Os campos não podem estar vazios", Toast.LENGTH_SHORT).show()
             }
         }
         binding.loginRedirectText.setOnClickListener {

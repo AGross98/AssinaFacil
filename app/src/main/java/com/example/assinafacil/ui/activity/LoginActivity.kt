@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Campos não podem estar vazios", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    //Outside onCreate
+    //Fora do onCreate
     private fun compareEmail(email: EditText){
         if (email.text.toString().isEmpty()){
             return
@@ -82,7 +82,7 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth.sendPasswordResetEmail(email.text.toString())
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Check your email", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Verifique seu e-mail", Toast.LENGTH_SHORT).show()
                 }
             }
     }
